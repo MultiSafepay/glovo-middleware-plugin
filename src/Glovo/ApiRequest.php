@@ -15,7 +15,7 @@ trait ApiRequest
      * @param null|array<string, array<string>>|array<string, string>|array<string, string> $data
      * @return array<string, array<string>>|array<string, string>|array<string, string>
      */
-    public static function send(string $method, string $path, null|array $data = null): string|array
+    public static function send(string $method, string $path, null|array $data = null): array
     {
         $url = config('glovo.glovo_api.url').$path;
         $response = Http::withHeaders(['Authorization' => TokenManager::getToken()])

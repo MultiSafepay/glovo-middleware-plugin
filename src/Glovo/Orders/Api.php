@@ -6,31 +6,34 @@ namespace GlovoPlugin\Glovo\Orders;
 
 use GlovoModels\Enum\OrderStatus;
 use GlovoPlugin\Glovo\ApiRequest;
-use Illuminate\Support\Collection;
 
 class Api
 {
     use ApiRequest;
 
-    public static function updateStatus(string $storeId, string $orderId, OrderStatus $status): void
+    /**
+     * @return array<string, array<string>>|array<string, string>|array<string, string>
+     */
+    public static function updateStatus(string $storeId, string $orderId, OrderStatus $status): array
     {
         $path = "webhook/stores/{$storeId}/orders/{$orderId}/status";
 
-        self::send('PUT', $path, ['status' => $status->value]);
+        return self::send('PUT', $path, ['status' => $status->value]);
     }
 
     /**
-     * @param Collection<\GlovoModels\Order\Replacement> $replacements
+     * @param array<\GlovoModels\Order\Replacement> $replacements
      * @param array<string> $removedPurchases
-     * @param Collection<\GlovoModels\Order\Product> $addedProducts
+     * @param array<\GlovoModels\Order\Product> $addedProducts
+     * @return array<string, array<string>>|array<string, string>|array<string, string>
      */
     public static function modifyOrderProducts(
         string $storeId,
         string $orderId,
-        Collection $replacements,
+        array $replacements,
         array $removedPurchases,
-        Collection $addedProducts
-    ): void
+        array $addedProducts
+    ): array
     {
         $path = "webhook/stores/{$storeId}/orders/{$orderId}/replace_products";
 
@@ -40,6 +43,6 @@ class Api
             'added_products' => $addedProducts
         ];
 
-        self::send('POST', $path, $payload);
+        return self::send('POST', $path, $payload);
     }
 }

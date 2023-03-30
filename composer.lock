@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c67f1b25efa55cb79430357db04b85d",
+    "content-hash": "02be63d7401c6f7b2bcecbcd72f46d38",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -380,12 +380,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MultiSafepay/laravel-glovo-models.git",
-                "reference": "837006b562d25a08775465c21c70f3a7970aee76"
+                "reference": "e985ca47dc647b367592a0d59d0faea70c981c4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MultiSafepay/laravel-glovo-models/zipball/837006b562d25a08775465c21c70f3a7970aee76",
-                "reference": "837006b562d25a08775465c21c70f3a7970aee76",
+                "url": "https://api.github.com/repos/MultiSafepay/laravel-glovo-models/zipball/e985ca47dc647b367592a0d59d0faea70c981c4e",
+                "reference": "e985ca47dc647b367592a0d59d0faea70c981c4e",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +424,7 @@
                 "source": "https://github.com/MultiSafepay/laravel-glovo-models/tree/main",
                 "issues": "https://github.com/MultiSafepay/laravel-glovo-models/issues"
             },
-            "time": "2023-03-29T09:33:49+00:00"
+            "time": "2023-03-30T07:26:00+00:00"
         },
         {
             "name": "multisafepay/laravel-notification-failure",
